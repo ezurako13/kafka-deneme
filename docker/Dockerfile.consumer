@@ -1,0 +1,11 @@
+# Use an official Python runtime as a parent image
+FROM python:3.10-slim
+
+# Download the get-pip.py script:
+RUN curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+
+# Run the get-pip.py script to install pip:
+RUN python get-pip.py
+
+# Install pip and kafka-python
+RUN pip install --no-cache-dir kafka-python
